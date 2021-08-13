@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://towardsdatascience.com/media/b13faf0525243e8c54545563d243b42f -->
+<html><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Medium</title><meta name="twitter:widgets:csp" content="on"><meta name="robots" content="noindex"><!--<base target="_blank">--><base href="." target="_blank"><style>body {text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif; font-weight: 400; color: #333332; font-size: 18px; line-height: 1.4; margin: 0; background-color: white; overflow: hidden;}iframe {max-width: 100%;}</style></head><body class="vsc-initialized"><style>.gist .gist-file { margin-bottom: 0 !important; }.gist { text-rendering: auto; }</style><script src="./427f94d7cd19b27e15c28174554d399d.js.download" charset="utf-8"></script><link rel="stylesheet" href="./gist-embed-f4c129808d1ba845285e410431c00f6d.css"><div id="gist103766225" class="gist">
+    <div class="gist-file" translate="no">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-countrypicker-jsx" class="file my-2">
+    
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-javascript  ">
+
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip="">
+      <tbody><tr>
+        <td id="file-countrypicker-jsx-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-countrypicker-jsx-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> <span class="pl-v">React</span><span class="pl-kos">,</span> <span class="pl-kos">{</span> <span class="pl-s1">useState</span><span class="pl-kos">,</span> <span class="pl-s1">useEffect</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">"react"</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-countrypicker-jsx-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> <span class="pl-kos">{</span> <span class="pl-v">NativeSelect</span><span class="pl-kos">,</span> <span class="pl-v">FormControl</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">"@material-ui/core"</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-countrypicker-jsx-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> <span class="pl-s1">styles</span> <span class="pl-k">from</span> <span class="pl-s">"./CountryPicker.module.css"</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-countrypicker-jsx-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> <span class="pl-kos">{</span> <span class="pl-s1">fetchCountries</span> <span class="pl-kos">}</span> <span class="pl-k">from</span> <span class="pl-s">"../../api"</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-countrypicker-jsx-LC5" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-countrypicker-jsx-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-k">const</span> <span class="pl-v">CountryPicker</span> <span class="pl-c1">=</span> <span class="pl-kos">(</span><span class="pl-kos">{</span> handleCountryChange <span class="pl-kos">}</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-countrypicker-jsx-LC7" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">const</span> <span class="pl-kos">[</span><span class="pl-s1">fetchedCountries</span><span class="pl-kos">,</span> <span class="pl-s1">setFetchedCountries</span><span class="pl-kos">]</span> <span class="pl-c1">=</span> <span class="pl-en">useState</span><span class="pl-kos">(</span><span class="pl-kos">[</span><span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-countrypicker-jsx-LC8" class="blob-code blob-code-inner js-file-line">  <span class="pl-en">useEffect</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-countrypicker-jsx-LC9" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">const</span> <span class="pl-en">fetchAPI</span> <span class="pl-c1">=</span> <span class="pl-k">async</span> <span class="pl-kos">(</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">{</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-countrypicker-jsx-LC10" class="blob-code blob-code-inner js-file-line">      <span class="pl-s1">setFetchedCountries</span><span class="pl-kos">(</span><span class="pl-k">await</span> <span class="pl-en">fetchCountries</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-countrypicker-jsx-LC11" class="blob-code blob-code-inner js-file-line">    <span class="pl-kos">}</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-countrypicker-jsx-LC12" class="blob-code blob-code-inner js-file-line">    <span class="pl-en">fetchAPI</span><span class="pl-kos">(</span><span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-countrypicker-jsx-LC13" class="blob-code blob-code-inner js-file-line">  <span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">setFetchedCountries</span><span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-countrypicker-jsx-LC14" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-countrypicker-jsx-LC15" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">return</span> <span class="pl-kos">(</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-countrypicker-jsx-LC16" class="blob-code blob-code-inner js-file-line">    <span class="pl-c1">&lt;</span><span class="pl-ent">FormControl</span> <span class="pl-c1">className</span><span class="pl-c1">=</span><span class="pl-kos">{</span><span class="pl-s1">styles</span><span class="pl-kos">.</span><span class="pl-c1">formControl</span><span class="pl-kos">}</span><span class="pl-c1">&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-countrypicker-jsx-LC17" class="blob-code blob-code-inner js-file-line">      <span class="pl-c1">&lt;</span><span class="pl-ent">NativeSelect</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-countrypicker-jsx-LC18" class="blob-code blob-code-inner js-file-line">        <span class="pl-c1">defaultValue</span><span class="pl-c1">=</span><span class="pl-s">""</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-countrypicker-jsx-LC19" class="blob-code blob-code-inner js-file-line">        <span class="pl-c1">onChange</span><span class="pl-c1">=</span><span class="pl-kos">{</span><span class="pl-kos">(</span><span class="pl-s1">e</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-en">handleCountryChange</span><span class="pl-kos">(</span><span class="pl-s1">e</span><span class="pl-kos">.</span><span class="pl-c1">target</span><span class="pl-kos">.</span><span class="pl-c1">value</span><span class="pl-kos">)</span><span class="pl-kos">}</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-countrypicker-jsx-LC20" class="blob-code blob-code-inner js-file-line">      <span class="pl-c1">&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-countrypicker-jsx-LC21" class="blob-code blob-code-inner js-file-line">        <span class="pl-c1">&lt;</span><span class="pl-ent">option</span> <span class="pl-c1">value</span><span class="pl-c1">=</span><span class="pl-s">""</span><span class="pl-c1">&gt;</span>Global<span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-ent">option</span><span class="pl-c1">&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-countrypicker-jsx-LC22" class="blob-code blob-code-inner js-file-line">        <span class="pl-kos">{</span><span class="pl-s1">fetchedCountries</span><span class="pl-kos">.</span><span class="pl-en">map</span><span class="pl-kos">(</span><span class="pl-kos">(</span><span class="pl-s1">country</span><span class="pl-kos">,</span> <span class="pl-s1">key</span><span class="pl-kos">)</span> <span class="pl-c1">=&gt;</span> <span class="pl-kos">(</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-countrypicker-jsx-LC23" class="blob-code blob-code-inner js-file-line">          <span class="pl-c1">&lt;</span><span class="pl-ent">option</span> <span class="pl-c1">key</span><span class="pl-c1">=</span><span class="pl-kos">{</span><span class="pl-s1">key</span><span class="pl-kos">}</span> <span class="pl-c1">value</span><span class="pl-c1">=</span><span class="pl-kos">{</span><span class="pl-s1">country</span><span class="pl-kos">}</span><span class="pl-c1">&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-countrypicker-jsx-LC24" class="blob-code blob-code-inner js-file-line">            <span class="pl-kos">{</span><span class="pl-s1">country</span><span class="pl-kos">}</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-countrypicker-jsx-LC25" class="blob-code blob-code-inner js-file-line">          <span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-ent">option</span><span class="pl-c1">&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-countrypicker-jsx-LC26" class="blob-code blob-code-inner js-file-line">        <span class="pl-kos">)</span><span class="pl-kos">)</span><span class="pl-kos">}</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-countrypicker-jsx-LC27" class="blob-code blob-code-inner js-file-line">      <span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-ent">NativeSelect</span><span class="pl-c1">&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-countrypicker-jsx-LC28" class="blob-code blob-code-inner js-file-line">    <span class="pl-c1">&lt;</span><span class="pl-c1">/</span><span class="pl-ent">FormControl</span><span class="pl-c1">&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-countrypicker-jsx-LC29" class="blob-code blob-code-inner js-file-line">  <span class="pl-kos">)</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L30" class="blob-num js-line-number" data-line-number="30"></td>
+        <td id="file-countrypicker-jsx-LC30" class="blob-code blob-code-inner js-file-line"><span class="pl-kos">}</span><span class="pl-kos">;</span></td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L31" class="blob-num js-line-number" data-line-number="31"></td>
+        <td id="file-countrypicker-jsx-LC31" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-countrypicker-jsx-L32" class="blob-num js-line-number" data-line-number="32"></td>
+        <td id="file-countrypicker-jsx-LC32" class="blob-code blob-code-inner js-file-line"><span class="pl-k">export</span> <span class="pl-k">default</span> <span class="pl-v">CountryPicker</span><span class="pl-kos">;</span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/sabesansathananthan/427f94d7cd19b27e15c28174554d399d/raw/d79943b9d48b3a75819d6abaa3c60ec9b20204d9/CountryPicker.jsx" style="float:right">view raw</a>
+        <a href="https://gist.github.com/sabesansathananthan/427f94d7cd19b27e15c28174554d399d#file-countrypicker-jsx">CountryPicker.jsx</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<script>var height = -1; var delayMs = 200; if (document) {document.domain = document.domain;}function notifyResize(height) {height = height ? height : document.documentElement.offsetHeight; var resized = false; if (window.donkey && donkey.resize) {donkey.resize(height);var elements = document.getElementsByClassName("gist-data"); for (var i = 0; i < elements.length; i++) {elements[i].style.overflow = "visible"}resized = true;}if (parent && parent._resizeIframe) {var obj = {iframe: window.frameElement, height: height}; parent._resizeIframe(obj); resized = true;}if (window.location && window.location.hash === "#amp=1" && window.parent && window.parent.postMessage) {window.parent.postMessage({sentinel: "amp", type: "embed-size", height: height}, "*");}if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.resize) {window.webkit.messageHandlers.resize.postMessage(height); resized = true;}return resized;}function maybeResize() {try {if (document.documentElement.offsetHeight != height && notifyResize()) {height = document.documentElement.offsetHeight;}delayMs = Math.min(delayMs * 2, 1000000); setTimeout(maybeResize, delayMs);} catch(error) {console.log('maybeResize error: ', error)}}maybeResize();</script></body></html>
